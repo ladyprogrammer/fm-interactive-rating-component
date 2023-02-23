@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'variables' as var;
+
+body {
+  background: var.$site-background;
+  color: var.$site-text;
+  font-family: var.$site-font-family;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+  color: var.$site-link;
+}
+
+// TODO: remove later
+@media (min-width: 768px) {
+  body {
+    background: darkslateblue;
+  }
+}
