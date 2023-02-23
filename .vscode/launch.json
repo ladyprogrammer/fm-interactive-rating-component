@@ -3,7 +3,15 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
+      "name": "ng serve: attach",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "preLaunchTask": "npm: start",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "ng serve: launch",
       "type": "pwa-chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
