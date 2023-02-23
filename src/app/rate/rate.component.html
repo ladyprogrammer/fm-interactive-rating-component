@@ -1,0 +1,32 @@
+<main class="dialog">
+  <section>
+    <div class="dialog__icon">
+      <img src="assets/images/icon-star.svg" alt="star icon">
+    </div>
+    <h1>How did we do?</h1>
+  </section>
+  <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+  <div class="rating">
+    <span (click)="selectedRating = 1" data-test="rating-1">
+      <input type="radio" name="rating" id="rating-1">
+      <label for="rating-1">1</label>
+    </span>
+    <span (click)="selectedRating = 2" data-test="rating-2">
+      <input type="radio" name="rating" id="rating-2">
+      <label for="rating-2">2</label>
+    </span>
+    <span (click)="selectedRating = 3" data-test="rating-3">
+      <input type="radio" name="rating" id="rating-3">
+      <label for="rating-3">3</label>
+    </span>
+    <span (click)="selectedRating = 4" data-test="rating-4">
+      <input type="radio" name="rating" id="rating-4">
+      <label for="rating-4">4</label>
+    </span>
+    <span (click)="selectedRating = 5" data-test="rating-5">
+      <input type="radio" name="rating" id="rating-5">
+      <label for="rating-5">5</label>
+    </span>
+  </div>
+  <button class="dialog__button" (click)="submitRating()" data-test="submit">Submit</button>
+</main>

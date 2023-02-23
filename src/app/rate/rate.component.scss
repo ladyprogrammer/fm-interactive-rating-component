@@ -1,0 +1,83 @@
+@use 'variables' as var;
+
+:host {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (min-width: 375px) {
+  .dialog {
+    width: 325px;
+    margin: 0 auto;
+    background: brown;
+    padding: 25px;
+  }
+
+  .dialog__icon {
+    background: darkgrey;
+    display: inline-flex;
+    padding: 20px;
+    border-radius: 50%;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: space-between;
+
+    input[type="radio"] {
+      opacity: 0;
+      position: fixed;
+      width: 0;
+
+      &:hover + label {
+        background-color: var.$rating-hover-background;
+      }
+
+      &:checked + label {
+        background-color: var.$rating-selected-background;
+      }
+
+
+    }
+
+    label {
+      padding: 10px;
+      background: darkgray;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: inline-flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+      cursor: pointer
+    }
+
+  }
+
+  .dialog__button {
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px 0;
+  }
+
+}
+
+// @media (min-width: 1200px) {
+@media (min-width: 768px) {
+  .dialog {
+    width: 410px;
+  }
+
+  .dialog__icon {
+    padding: 25px;
+  }
+}
