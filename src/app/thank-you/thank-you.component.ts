@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./thank-you.component.scss']
 })
 export class ThankYouComponent {
-  @Input() selectedRating = 4;
+  @Input() selectedRating!: number;
 
 }
