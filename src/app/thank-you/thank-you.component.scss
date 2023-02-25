@@ -26,4 +26,10 @@
   .rating {
     padding: 10px 20px;
   }
+
+  .description {
+    &__line {
+      display: inline-block;
+    }
+  }
 }
