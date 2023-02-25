@@ -55,6 +55,7 @@ Users should be able to:
 ### Continued development
 
 - Tests (already started)
+- Refactor
 
 
 ### Useful resources
