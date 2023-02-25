@@ -55,6 +55,7 @@ Users should be able to:
 ### Continued development
 
 - Tests (already started)
+- Refactor
 
 
 ### Useful resources
@@ -65,4 +66,4 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ladyprogrammer)
+- Frontend Mentor - [@ladyprogrammer](https://www.frontendmentor.io/profile/ladyprogrammer)
