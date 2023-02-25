@@ -1,20 +1,18 @@
 @use 'variables' as var;
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background: var.$site-background;
-  color: var.$site-text;
-  font-family: var.$site-font-family;
+  font-size: 1.6rem;
+  background: var.$very-dark-blue;
+  color: var.$light-grey;
+  font-family: var.$primary-font-family;
 }
 
 a {
   outline: 0;
   text-decoration: none;
-  color: var.$site-link;
-}
-
-// TODO: remove later
-@media (min-width: 768px) {
-  body {
-    background: darkslateblue;
-  }
+  color: var.$white;
 }

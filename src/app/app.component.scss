@@ -1,0 +1,36 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+@use 'sass:color';
+
+
+.dialog {
+  @include mix.center-dialog;
+}
+
+@media (min-width: 375px) {
+  .dialog {
+    font-size: 1.2rem;
+    width: 275px;  // 325px total
+    height: 300px;  // 360px total
+    padding: 25px 25px 35px;
+    margin: 0 auto;
+    border-radius: 25px;
+    background: color.scale(var.$dark-blue, $lightness: -20%, $saturation: 10%);  
+  }
+}
+
+// @media (min-width: 1200px) {
+@media (min-width: 768px) {
+  .dialog {
+    width: 350px; // 410px total
+    height: 345px; // 415px total
+    padding: 35px 30px;
+  }
+
+  .rating {
+    &:hover + .rating__radio-label {
+      background-color: var.$orange;
+      color: var.$white;
+    }
+  }
+}

@@ -8,7 +8,7 @@ interface Test {
 @Component({
   selector: 'app-rate',
   templateUrl: './rate.component.html',
-  styleUrls: ['./rate.component.scss']
+  styleUrls: ['../dialog.component.scss', './rate.component.scss']
 })
 export class RateComponent {
   @Input() selectedRating!: number | undefined;
