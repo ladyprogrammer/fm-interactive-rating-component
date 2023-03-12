@@ -1,0 +1,18 @@
+@forward '_prefixes';
+@use 'variables' as var;
+
+@mixin center-card {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(var.$button-background-default);
+}
+
+@mixin circle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: calc($diameter / 2);
+}

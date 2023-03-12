@@ -1,5 +1,5 @@
-<main>
-  <app-rate class="dialog" *ngIf="!selectedRating" [selectedRating]="selectedRating" 
+<main class="main">
+  <app-rate class="card" *ngIf="!selectedRating" [selectedRating]="selectedRating" 
     (sendRating)="saveRating($event)"></app-rate>
-  <app-thank-you class="dialog" *ngIf="selectedRating" [selectedRating]="selectedRating"></app-thank-you>
+  <app-thank-you class="card" *ngIf="selectedRating" [selectedRating]="selectedRating"></app-thank-you>
 </main>

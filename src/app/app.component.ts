@@ -6,18 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private _selectedRating: number | undefined;
+  private _selectedRating?: number;
 
   constructor() {
-    this._selectedRating = undefined;
   }
 
-  set selectedRating(rating: number | undefined) {
+  set selectedRating(rating: number) {
     this._selectedRating = rating;
   }
 
   get selectedRating() {
-    return this._selectedRating;
+    return this._selectedRating!;
   }
 
   saveRating(rating: number) {

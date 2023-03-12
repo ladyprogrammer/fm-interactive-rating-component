@@ -1,18 +1,65 @@
 @use 'variables' as var;
+@use 'functions' as fn;
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; //include the padding and border in an element's total width and height
+}
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 10px browser font size for division
 }
 
 body {
-  font-size: 1.6rem;
-  background: var.$very-dark-blue;
-  color: var.$light-grey;
+  font-size: 1.6rem;  // 16px base size
+  background: var.$site-background;
+  color: var.$site-text-color;
   font-family: var.$primary-font-family;
 }
 
-a {
-  outline: 0;
-  text-decoration: none;
-  color: var.$white;
+h1 {
+  font-size: 2.4rem;
+  color: var.$header-color;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+button {
+  $button-height: fn.em(45px);
+  height: $button-height;
+  border-radius: calc($button-height / 2);
+  width: 100%;
+  background: var.$button-background-default;
+  color: var.$button-text-color-default;
+  border: 0;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: fn.em(2px);
+  font-family: inherit;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &:hover:not([disabled]) {
+    background: var.$button-background-hover;
+    color: var.$button-text-color-hover;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: var.$breakpoint-desktop) {
+  h1 {
+    font-size: 2.6rem;
+    letter-spacing: fn.em(1px);
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
 }

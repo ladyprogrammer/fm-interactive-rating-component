@@ -1,34 +1,17 @@
-<div>
-  <div class="icon">
-      <img src="assets/images/icon-star.svg" alt="star icon">
-  </div>
-</div>
-<h1 class="title">How did we do?</h1>
+<header class="title">
+  <div class="title__icon"></div>
+  <h1>How did we do?</h1>
+</header>
+
 <p class="description">Please let us know how we did with your support request. 
   All feedback is appreciated to help us improve our offering!
 </p>
 
 <div class="rating">
-  <span (click)="selectedRating = 1" data-test="rating-1">
-    <input type="radio" name="rating" id="rating-1" class="rating__radio-input">
-    <label for="rating-1" class="rating__radio-label">1</label>
-  </span>
-  <span (click)="selectedRating = 2" data-test="rating-2">
-    <input type="radio" name="rating" id="rating-2" class="rating__radio-input">
-    <label for="rating-2" class="rating__radio-label">2</label>
-  </span>
-  <span (click)="selectedRating = 3" data-test="rating-3">
-    <input type="radio" name="rating" id="rating-3" class="rating__radio-input">
-    <label for="rating-3" class="rating__radio-label">3</label>
-  </span>
-  <span (click)="selectedRating = 4" data-test="rating-4">
-    <input type="radio" name="rating" id="rating-4" class="rating__radio-input">
-    <label for="rating-4" class="rating__radio-label">4</label>
-  </span>
-  <span (click)="selectedRating = 5" data-test="rating-5">
-    <input type="radio" name="rating" id="rating-5" class="rating__radio-input">
-    <label for="rating-5" class="rating__radio-label">5</label>
+  <span (click)="selectedRating = option" data-test="rating" *ngFor="let option of [1, 2, 3, 4, 5]">
+    <input type="radio" name="rating" id="rating-{{ option }}" class="rating__radio">
+    <label for="rating-{{ option }}" class="rating__label">{{ option }}</label>
   </span>
 </div>
 
-<button class="submit-button" (click)="submitRating()" data-test="submit">Submit</button>
+<button class="button-submit" (click)="submitRating()" data-test="submit" [disabled]="!selectedRating">Submit</button>
