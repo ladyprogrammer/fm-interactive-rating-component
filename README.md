@@ -34,8 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://fm-interactive-rating-component-bice.vercel.app/)
 
 ## My process
 
@@ -50,12 +49,14 @@ Users should be able to:
 
 - Review of Angular, SASS and other front-end basics
 - CSS BEM naaming convention
+- CSS Flexbox and Grid
+- Best practices
 
 
 ### Continued development
 
 - Tests (already started)
-- Refactor
+- Refactoring
 
 
 ### Useful resources
