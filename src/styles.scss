@@ -43,7 +43,6 @@ button {
   font-family: inherit;
 
   &[disabled] {
-    background-color: var.$button-background-disabled;
     cursor: not-allowed;
   }
 
