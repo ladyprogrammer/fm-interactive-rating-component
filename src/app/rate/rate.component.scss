@@ -1,11 +1,88 @@
 @use 'variables' as var;
+@use 'functions' as fn;
+@use 'mixins' as mix;
+@use 'sass:color';
 
-@media (min-width: 375px) {
-  .icon {
-    background: var.$dark-blue;
+.rating {
+  $r: &;
+  display: flex;
+  justify-content: space-between;
+  margin: fn.em(25px) 0;
+
+  &__label {
+    $diameter-icon: fn.em(40px);
+    @include mix.circle($diameter-icon);
+    background-color: var.$radio-background-default;
+    color: var.$radio-text-default;
+    font-size: 1.4rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var.$radio-background-hover;
+      color: var.$radio-text-hover;
+    }
   }
 
+  &__radio {
+    @include mix.appearance;
+    // For iOS < 15 to remove gradient background
+    background-color: #fff;
+    // Not removed via appearance
+    margin: 0;
+
+    &:checked + #{$r}__label {
+      background-color: var.$radio-background-checked;
+      color: var.$radio-text-checked;
+      cursor: initial;
+    }
+  }
+}
+
+
+@media (min-width: var.$breakpoint-mobile) {
   .title {
-    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+
+    &__icon {
+      $diameter-icon: fn.em(40px);
+      @include mix.circle($diameter-icon);
+      background: var.$icon-star-background url('../../assets/images/icon-star.svg') no-repeat center;
+    }
+  }
+
+  .description {
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .rating {
+    flex-grow: 1;
+  }
+
+  .button-submit {
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: var.$breakpoint-desktop) {
+  .title {
+    gap: fn.em(15px);
+
+    &__icon {
+      $diameter-icon: fn.em(45px);
+      @include mix.circle($diameter-icon);
+    }
+  }
+
+  .rating {
+    &__label {
+      $diameter-icon: fn.em(50px);
+      @include mix.circle($diameter-icon);
+      font-size: 1.6rem;
+    }
   }
 }

@@ -1,35 +1,34 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
+@use 'functions' as fn;
 @use 'sass:color';
 
 
-.dialog {
-  @include mix.center-dialog;
-}
-
-@media (min-width: 375px) {
-  .dialog {
-    font-size: 1.2rem;
-    width: 275px;  // 325px total
-    height: 300px;  // 360px total
-    padding: 25px 25px 35px;
+@media (min-width: var.$breakpoint-mobile) {
+  .card {
+    @include mix.center-card;
+    width: fn.em(325px);
+    height: fn.em(360px);
+    padding: fn.em(25px) fn.em(24px) fn.em(35px);
     margin: 0 auto;
-    border-radius: 25px;
-    background: color.scale(var.$dark-blue, $lightness: -20%, $saturation: 10%);  
+    border-radius: fn.em(25px);
+    background: linear-gradient(var.$card-background-light, var.$card-background-dark);
+  }
+
+  .title {
+    &__icon {
+      $diameter-icon: fn.em(50px);
+      width: $diameter-icon;
+      height: $diameter-icon;
+      border-radius: calc($diameter-icon / 2);
+    }
   }
 }
 
-@media (min-width: 1440px) {
-  .dialog {
-    width: 350px; // 410px total
-    height: 345px; // 415px total
-    padding: 35px 30px;
-  }
-
-  .rating {
-    &:hover + .rating__radio-label {
-      background-color: var.$orange;
-      color: var.$white;
-    }
+@media (min-width: var.$breakpoint-desktop) {
+  .card {
+    width: fn.em(410px);
+    height: fn.em(415px);
+    padding: fn.em(30px);
   }
 }

@@ -1,35 +1,66 @@
 @use 'variables' as var;
+@use 'functions' as fn;
 
 :host {
   align-items: center;
+  justify-content: space-around;
 }
 
-@media (min-width: 375px) {
-  .rating {
-    background: var.$dark-blue;
-    color: var.$orange;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 0;
-  }
+@media (min-width: var.$breakpoint-mobile) {
+  .header {
+    display: grid;
+    gap: fn.em(20px);
+    justify-items: center;
+    margin-top: fn.em(10px);
 
-  .title {
-    margin: 35px 0 20px;
+    &__icon {
+      background: transparent url('../../assets/images/illustration-thank-you.svg') no-repeat center;
+      background-size: contain;
+      height: fn.em(95px);
+      justify-self: normal;
+    }
+
+    &__rating {
+      $--height: fn.em(30px);
+      height: $--height;
+      line-height: $--height;
+      text-align: center;
+      width: fn.em(170px);
+      border-radius: calc($--height / 2);
+      background: var.$rating-background;
+      color: var.$rating-text-color;
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    &__title {
+      margin: 0;
+    }
   }
 
   .description {
     text-align: center;
+    margin: 0 fn.em(5px);
   }
 }
 
-@media (min-width: 1440px) {
-  .rating {
-    padding: 10px 20px;
+@media (min-width: var.$breakpoint-desktop) {
+  :host {
+    justify-content: normal;
+    gap: fn.em(15px);
   }
 
-  .description {
-    &__line {
-      display: inline-block;
+  .header {
+    gap: fn.em(30px);
+    align-content: space-evenly;
+
+    &__icon {
+      height: fn.em(105px);
+    }
+
+    &__rating {
+      width: fn.em(190px);
+      font-size: 1.6rem;
     }
   }
 }

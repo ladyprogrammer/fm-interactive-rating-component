@@ -1,0 +1,48 @@
+@use '_fonts';
+@use 'sass:color';
+
+// Breakpoints
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1440px;
+
+// Colors
+$--orange: hsl(25, 97%, 53%);
+$--white: hsl(0, 0%, 100%);
+$--grey-light: hsl(217, 12%, 63%);
+$--grey-medium: hsl(216, 12%, 54%);
+$--blue-dark: hsl(213, 19%, 18%);
+$--blue-very-dark: hsl(216, 12%, 8%);
+
+// Fonts
+$primary-font-family: 'Overpass', Arial, sans-serif;
+
+// Overall
+$site-background: $--blue-very-dark;
+$site-text-color: $--grey-light;
+
+// Card
+$card-background-light: $--blue-dark;
+$card-background-dark: color.adjust($--blue-dark, $lightness: -5%);
+
+// Header
+$header-color: $--white;
+$icon-star-background: color.adjust($--blue-dark, $lightness: 5%);
+
+// Radio Selectors
+$radio-background-default: $--blue-dark;
+$radio-background-hover: $--orange;
+$radio-background-checked: $--grey-medium;
+$radio-text-default: currentColor;
+$radio-text-hover: $--white;
+$radio-text-checked: $--white;
+
+// Button
+$button-background-default: $--orange;
+$button-background-hover: $--white;
+$button-text-color-default: $--white;
+$button-text-color-hover: $--orange;
+$button-background-disabled: $--grey-medium;
+
+// Rating
+$rating-background: $--blue-dark;
+$rating-text-color: color.adjust($--orange, $saturation: -50%, $lightness: -5%);
